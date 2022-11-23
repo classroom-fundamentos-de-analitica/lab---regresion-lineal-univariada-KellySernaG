@@ -47,23 +47,24 @@ def pregunta_02():
     Complete el código presentado a continuación.
     """
 
-    # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
+    # Lea el archivo gm_2008_region.csv y asignelo al DataFrame df
     df = pd.read_csv("gm_2008_region.csv", sep=",")
 
-    # Imprima las dimensiones del DataFrame
-    print(df.shape)
-
-    # Imprima la correlación entre las columnas `life` y `fertility` con 4 decimales.
+    # Imprima la correlación entre las columnas life y fertility con 4 decimales.
     print(df['life'].corr(df['fertility']).round(4))
 
-    # Imprima la media de la columna `life` con 4 decimales.
+    # Imprima la media de la columna life con 4 decimales.
     print(df['life'].mean().round(4))
 
-    # Imprima el tipo de dato de la columna `fertility`.
-    print(df['fertility'].dtypes)
+    print(pd.core.series.Series)
 
-    # Imprima la correlación entre las columnas `GDP` y `life` con 4 decimales.
+    # Imprima la correlación entre las columnas GDP y life con 4 decimales.
     print(df['GDP'].corr(df['life']).round(4))
+    # Imprima las dimensiones del DataFrame
+    #print(df.shape)
+
+    # Imprima el tipo de dato de la columna fertility.
+    #print(df['fertility'].dtypes)
 
 
 def pregunta_03():
@@ -93,7 +94,6 @@ def pregunta_03():
         min(X_fertility),
         max(X_fertility),
     ).reshape(-1, 1)
-
     # Entrene el modelo usando X_fertility y y_life
     reg.fit(X_fertility, y_life)
 
@@ -139,6 +139,7 @@ def pregunta_04():
     linearRegression = LinearRegression()
 
     # Entrene el clasificador usando X_train y y_train
+
     linearRegression.fit(X_train,
                          y_train)
 
@@ -150,4 +151,3 @@ def pregunta_04():
         X_test, y_test)))
     rmse = np.sqrt(mean_squared_error(y_test, y_pred))
     print("Root Mean Squared Error: {:6.4f}".format(rmse))
-
